@@ -1,6 +1,6 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.getElementById("reset-btn");
-let winnerMsg = document.getElementById("winner");
+let winnerMsg = document.querySelector(".winner");
 let reset = document.getElementById("reset-btn");
 let restart = document.getElementById("restart-btn");
 let val1 = 0;
@@ -35,7 +35,10 @@ boxes.forEach(e => {
         }
         e.disabled = true;
         checkWinner();
-        if(win == 9) winnerMsg.innerText = `Tie Game! No winner`;
+        if(win == 9) {
+            winnerMsg.innerText = `Tie Game! No winner`;
+            winnerMsg.id = 'tie';
+        }
     })
 });
 
